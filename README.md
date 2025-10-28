@@ -1,93 +1,136 @@
-# 🧠 Smart Text Analyzer (Flask + Transformers + OpenRouter)
+# 🧠 Anviro — AI Text Sentiment & Summary API
 
-This project is a **Flask-based AI text analyzer** that performs:
-- 🪞 Sentiment Analysis (Positive / Negative)
-- ✍️ Text Summarization using OpenRouter API (GPT/Mistral)
+Anviro is a lightweight **Flask-based AI API** that performs **sentiment analysis** and **text summarization** using Hugging Face Transformers and OpenRouter API.
 
 ---
 
 ## 🚀 Features
-- Real-time text analysis via REST API  
-- Sentiment analysis powered by **Hugging Face Transformers**
-- AI-based summarization using **OpenRouter**
-- JSON API response for easy integration with web or mobile apps
+
+- 🔍 Sentiment analysis using **DistilBERT**
+- 📝 Smart summarization via **OpenRouter API**
+- ⚡ Lightweight Flask backend
+- 🧠 Ready for integration with frontend or mobile apps
 
 ---
 
 ## 🛠️ Installation Guide
 
-### 1. Clone this repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/Touseeq20/anviro.git
 cd anviro
-2. Create a virtual environment
-bash
-Copy code
+```
+
+### 2. Create a Virtual Environment
+```bash
 python -m venv .venv
-3. Activate the environment
-For Windows (PowerShell)
-bash
-Copy code
+```
+
+### 3. Activate the Environment
+#### For Windows (PowerShell)
+```bash
 .venv\Scripts\activate
-For Mac/Linux
-bash
-Copy code
+```
+#### For Mac/Linux
+```bash
 source .venv/bin/activate
-4. Install dependencies
-bash
-Copy code
+```
+
+### 4. Install Dependencies
+```bash
 pip install flask transformers requests torch
-🔑 Setup OpenRouter API Key
-Go to https://openrouter.ai/keys
+```
 
-Copy your API key
+---
 
-Open app.py and replace:
+## 🔑 Setup OpenRouter API Key
 
-python
-Copy code
+1. Visit [OpenRouter.ai](https://openrouter.ai/keys)
+2. Copy your API key  
+3. Open **app.py** and replace the placeholder:
+
+```python
 OPENROUTER_API_KEY = "sk-or-v1-REPLACE-WITH-YOUR-KEY"
-with your real key.
+```
 
-▶️ Run the Flask App
-bash
-Copy code
+with your real API key.
+
+---
+
+## ▶️ Run the Flask App
+```bash
 python app.py
-Your app will start on:
+```
 
-cpp
-Copy code
+The app will start at:
+
+```
 http://127.0.0.1:8000/
-📡 API Usage
-✅ Check if server is running
-GET http://127.0.0.1:8000/
+```
 
-Response:
+---
 
-json
-Copy code
+## 📡 API Usage
+
+### ✅ Check Server Status
+**GET**
+```
+http://127.0.0.1:8000/
+```
+
+**Response:**
+```json
 {
   "message": "✅ Flask Smart Text Analyzer is running!",
   "endpoints": {
     "POST /analyze": "Analyze sentiment and summarize text"
   }
 }
-🧾 Analyze Text
-POST http://127.0.0.1:8000/analyze
+```
 
-Request Body:
+---
 
-json
-Copy code
+### 🧾 Analyze Text
+**POST**
+```
+http://127.0.0.1:8000/analyze
+```
+
+**Request Body:**
+```json
 {
   "text": "I love this new AI model! It's super fast and accurate."
 }
-Response:
+```
 
-json
-Copy code
+**Response:**
+```json
 {
   "sentiment": "positive",
   "confidence": 0.999,
   "summary": "The user is happy about the AI model’s speed and accuracy."
 }
+```
+
+---
+
+## 🧩 Project Structure
+
+```
+anviro/
+├── app.py                # Main Flask application
+├── requirements.txt      # Dependencies (optional)
+└── README.md             # Documentation
+```
+
+---
+
+## 👨‍💻 Author
+**Muhammad Touseeq**  
+AI Engineer | Python Developer | NLP & Agentic AI Researcher  
+📧 [Contact Me](mailto:touseeq20@gmail.com)
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License** — feel free to use, modify, and distribute.
