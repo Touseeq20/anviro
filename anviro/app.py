@@ -15,7 +15,7 @@ sentiment_model = pipeline("sentiment-analysis", model="distilbert-base-uncased-
 # ----------------------------
 # OpenRouter API Setup
 # ----------------------------
-OPENROUTER_API_KEY = "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"  # ⚠️ Replace with your own key
+OPENROUTER_API_KEY = "sk-or-v1-2c7e3126"  # ⚠️ Replace with your own key
 
 def summarize_text_with_openrouter(text):
     """Uses OpenRouter API to summarize input text."""
@@ -93,4 +93,5 @@ def analyze_text():
 # ----------------------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
+
 
